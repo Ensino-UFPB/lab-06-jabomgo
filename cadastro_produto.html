@@ -31,7 +31,7 @@
             <h1 class="cartao__titulo">Cadastrar um produto</h1>
             <form action="./cadastro_produto_concluido.html" class="flex flex--coluna">
                 <div class="input-container">
-                    <input name="nome" id="nome" class="input" type="text" placeholder="Nome">
+                    <input name="nome" id="nome" class="input" type="text" placeholder="Nome" required>
                     <label class="input-label" for="nome">Nome</label>
                     <span class="input-mensagem-erro">Este campo não está válido</span>
                 </div>
@@ -50,4 +50,23 @@
         </section>
     </main>
 </body>
+<script src="./js/app.js" type="module"></script>
+<script src="./js/simple-mask-money.umd.js"></script>
+<script>
+    const preco = document.getElementById('preco')
+    const optionsUSD = {
+      afterFormat(e) { console.log('afterFormat', e); },
+      allowNegative: false,
+      beforeFormat(e) { console.log('beforeFormat', e); },
+      negativeSignAfter: false,
+      prefix: '$',
+      suffix: '',
+      fixed: true,
+      fractionDigits: 2,
+      decimalSeparator: ',',
+      thousandsSeparator: '.',
+      cursor: 'end'
+    };
+    SimpleMaskMoney.setMask(preco, optionsUSD)
+</script>
 </html>
