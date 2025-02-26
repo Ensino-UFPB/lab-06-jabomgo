@@ -25,6 +25,15 @@ const mensagensDeErro = {
     nome: {
         valueMissing: 'O campo de nome não pode estar vazio.'
     },
+    telefone: {
+        valueMissing: "O campo é obrigatorio",
+        typeMismatch: "Telefone inválido, valor deve ser númerico",
+        patternMismatch: "Telefone deve conter DDD no formatos (xx)xxxx-xxxxx"
+    },
+    instagram: {
+        valueMissing: "Campo obrigatorio",
+        patternMismatch: "O user do instagram deve começar com @fulanodetal"
+    },
     email: {
         valueMissing: 'O campo de email não pode estar vazio.',
         typeMismatch: 'O email digitado não é válido.'
@@ -60,7 +69,7 @@ const mensagensDeErro = {
 const validadores = {
     dataNascimento:input => validaDataNascimento(input),
     cpf:input => validaCPF(input),
-    cep:input => recuperarCEP(input)
+    cep:input => recuperarCEP(input),
 }
 
 function mostraMensagemDeErro(tipoDeInput, input) {
